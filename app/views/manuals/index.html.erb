@@ -1,0 +1,34 @@
+<div class="contextual">
+	<%= link_to t(:manual_link_new_document), new_manual_path, :class => "icon icon-add" %>
+</div>
+
+<h2><%= t :manuals %></h2>
+
+<div class="autoscroll">
+	<table class="list">
+		<thead>
+			<tr>
+				<th align="left">#</th>
+				<th align="left"><%= t :field_updated_on %></th>
+				<th align="left"><%= t :field_title %></th>
+				<th width = 2%></th>
+				<th width = 2%></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @manuals.each do |manual| %>
+			<tr>
+				<td width = 2%><%= manual.id %></td>
+				<td width = 10%><%= format_time(manual.updated_at) %></td>
+				<td width = 50%><%= link_to manual.title, manual_path(manual) %></td>
+				<td>					
+					<%= link_to t(:button_edit), edit_manual_path(manual), :class => "icon icon-edit" %>					
+				</td>
+				<td>					
+					<%= link_to t(:button_delete), manual, :method => :delete, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,13 @@
+<h2>
+	<%= t(:manual) %> <%= @manual.title %>
+</h2>
+
+<div class="contextual">
+	<%= link_to t(:button_edit), edit_manual_path, :class => "icon icon-edit" %>	
+</div>
+
+<h3>
+	<%= t :table_of_content %>
+</h3>
+	
+<%= nested_li(@manual.root.descendants) %>

@@ -1,0 +1,19 @@
+ru:  
+  manual: Документ
+  manual_link_new_document: Новый документ
+  manuals: Документация
+  manual_edit_header: Редактирование
+  manual_new_chapter: Добавить раздел
+  manual_chapter_created: Раздел успешно создан 
+  manual_chapter_saved: Раздел успешно сохранен
+  manual_chapter_deleted: Раздел успешно удалён
+  manual_chapter_new_header: Новый раздел
+  manual_chapter_edit_header: Редактирование раздела
+  manual_chapter_show_header: Раздел
+  field_wiki_page: Страница wiki
+  field_use_custom_title: Подменять заголовок
+  field_custom_title: Собственный заголовок
+  field_manual_chapter: Страница-владелец
+  chapter_parents: Родительские главы
+  chapter_childs: Дочерние главы
+  table_of_content: Оглавление

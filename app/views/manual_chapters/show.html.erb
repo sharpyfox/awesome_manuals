@@ -1,0 +1,18 @@
+<%= render "parents" %>
+
+<div class="contextual">
+	<%= link_to t(:button_edit), edit_manual_chapter_path(@chapter), :class => "icon icon-edit" %>	
+</div>
+
+<h2>
+	<%= t :manual_chapter_show_header %> <%= " " + @chapter.title %>
+</h2>
+
+<h3>
+	<%= t :chapter_childs %>
+</h3>
+
+<div>
+  <%= nested_li(@chapter.descendants) %>
+</div>
+

@@ -1,0 +1,34 @@
+<h3>
+	<%= t :chapter_childs %>
+</h3>
+
+<div>
+	<table class="list">
+		<thead>
+			<tr>
+				<th align="left">#</th>
+				<th align="left"><%= t :field_title %></th>
+				<th width = 2%>Порядок</th>
+				<th width = 2%></th>
+				<th width = 2%></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @chapter.children.each_with_index do |chapter, i| %>
+			<tr class=<%= cycle("odd", "even") %>>
+				<td width = 2%><%= (i + 1).to_s() %></td>
+				<td width = 50%><%= link_to chapter.title, manual_chapter_path(chapter) %></td>
+				<td>
+					<%= reorder_links("order", {:controller => :manual_chapters, :action => "reorder", :id => chapter.id}) %>
+				</td>
+				<td>
+					<%= link_to t(:button_edit), edit_manual_chapter_path(chapter), :class => "icon icon-edit" %>
+				</td>
+				<td>
+					<%= link_to t(:button_delete), chapter, :method => :delete, :class => "icon icon-del", :confirm => t(:text_are_you_sure) %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

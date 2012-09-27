@@ -1,0 +1,13 @@
+<%= render "parents" %>
+
+<h2><%= t :manual_chapter_edit_header %></h2>
+
+<%= render "form" %>
+
+<div class="contextual">
+		<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-add" %>
+</div>
+
+<%= render "childs_order" %>
+
+
