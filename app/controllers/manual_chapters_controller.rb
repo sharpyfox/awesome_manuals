@@ -1,4 +1,5 @@
 class ManualChaptersController < ApplicationController
+	unloadable
 	
 	before_filter :fetch_wiki_pages
 	
