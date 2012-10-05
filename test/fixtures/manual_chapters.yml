@@ -1,0 +1,84 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_chapter:
+  id: 1
+  manual_id: 2
+  custom_title: First Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: nil
+  lft: 1
+  rgt: 2
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+second_chapter:
+  id: 2
+  manual_id: 2
+  custom_title: Second Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: nil
+  lft: 3
+  rgt: 4
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+third_chapter:
+  id: 3
+  manual_id: 2
+  custom_title: Third Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: nil
+  lft: 5
+  rgt: 6
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+first_first_chapter:
+  id: 4
+  manual_id: 2
+  custom_title: First First Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: 1
+  lft: 7
+  rgt: 8
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+first_second_chapter:
+  id: 5
+  manual_id: 2
+  custom_title: First Second Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: 1
+  lft: 9
+  rgt: 10
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+first_third_chapter:
+  id: 6
+  manual_id: 2
+  custom_title: First Third Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: 1
+  lft: 11
+  rgt: 12
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+first_second_first_chapter:
+  id: 7
+  manual_id: 2
+  custom_title: First Second First Chapter
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: 5
+  lft: 13
+  rgt: 14
+  created_at: 2012-09-29
+  updated_at: 2012-10-01

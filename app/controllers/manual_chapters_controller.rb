@@ -2,11 +2,6 @@ class ManualChaptersController < ApplicationController
 	unloadable
 	
 	before_filter :fetch_wiki_pages
-	
-	def index
-		@manual = Manual.find(params[:manual_id])
-		@chapters = @manual.manual_chapters
-	end
   
 	def new
 		@manual = Manual.find(params[:manual_id])

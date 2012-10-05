@@ -1,0 +1,17 @@
+bad_project:
+  id: 1
+  title: Some bad project manual
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+some_project:
+  id: 2
+  title: Some project manual
+  created_at: 2012-09-30
+  updated_at: 2012-10-02
+
+cool_project:
+  id: 3
+  title: Cool project manual
+  created_at: 2012-09-30
+  updated_at: 2012-10-03

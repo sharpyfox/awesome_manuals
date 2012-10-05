@@ -40,6 +40,7 @@ class ManualsController < ApplicationController
   
 	def update
 		@manual = Manual.find(params[:id])
+		@chapter = @manual.root
 		if @manual.update_attributes(params[:manual])
 			flash[:notice] = "Successfully updated article."
 			redirect_to @manual
