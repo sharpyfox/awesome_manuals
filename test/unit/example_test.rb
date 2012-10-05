@@ -12,6 +12,6 @@ class ExampleTest < Test::Unit::TestCase
       assert_equal true, @value
     end
 
-    should "have some proper tests"
+    should "have some proper testss"
   end
 end
