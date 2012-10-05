@@ -1,0 +1,27 @@
+language: ruby
+rvm:  
+  - 1.8.7
+  #- 1.9.2
+  #- 1.9.3
+
+#Prevents installation of plugin's gemfile
+gemfile: non-existent-gemfile
+
+before_install:
+  # Git repo of the Redmine
+  - export MAIN_REPO="git://github.com/redmine/redmine.git"
+  # Name of your plugin's repo
+  - export REPO_NAME=awesome_manuals
+  # Plugin's name/directory
+  - export PLUGIN_NAME=awesome_manuals
+  # Git tag for redmine version
+  - export REDMINE_GIT_TAG=1.4.1
+  # Arguments passed to bundle install on Redmine's Gemfile
+  #- export BUNDLE_ARGS="--without development sqlite"
+  - export TARGET_DIR="$HOME/redmine"
+before_script: "./test/ci/before_script.sh"
+script: "./test/ci/script.sh"
+
+env:
+  - "DB=mysql BUNDLE_WITHOUT=rmagick:postgres:sqlite"  
+  - "DB=postgres BUNDLE_WITHOUT=rmagick:mysql:mysql2:sqlite"
