@@ -82,3 +82,15 @@ first_second_first_chapter:
   rgt: 14
   created_at: 2012-09-29
   updated_at: 2012-10-01
+
+some_chapter:
+  id: 8
+  manual_id: 1
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: nil
+  parent_id: nil
+  lft: 15
+  rgt: 16
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
