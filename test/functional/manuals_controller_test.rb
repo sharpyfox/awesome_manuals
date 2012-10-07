@@ -55,7 +55,7 @@ class ManualsControllerTest < ActionController::TestCase
 	end
   
 	def test_destroy
-		manual = Manual.first
+		manual = manuals(:with_one_child)
 		assert_equal 1, ManualChapter.find_all_by_manual_id(manual.id).count
 		delete :destroy, :id => manual
 		assert_redirected_to manuals_url

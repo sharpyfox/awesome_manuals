@@ -1,4 +1,4 @@
-bad_project:
+with_one_child:
   id: 1
   title: Some bad project manual
   created_at: 2012-09-29
