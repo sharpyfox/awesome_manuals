@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Fix for "deprecated" warning on Ubuntu in travis
+gem update --system 1.6.2
+
 # Git repo of the Redmine
 
 # Prepare Redmine
