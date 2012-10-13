@@ -61,6 +61,6 @@ class ManualChaptersController < ApplicationController
 	private
 	
 	def fetch_wiki_pages
-		@wiki_pages = WikiPage.all
+		@wiki_pages = WikiPage.all.sort_by(&:title)
 	end
 end

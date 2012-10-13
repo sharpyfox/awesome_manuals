@@ -7,7 +7,7 @@
 		</p>
 		
 		<p>
-			<%= f.select :wiki_page_id, options_from_collection_for_select(@wiki_pages, :id, :title, @chapter.wiki_page_id) %>
+			<%= f.select :wiki_page_id, options_from_collection_for_select(@wiki_pages, :id, :title, @chapter.wiki_page_id), {:include_blank => true} %>
 		</p>
 
 		<p>
