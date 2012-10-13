@@ -1,7 +1,9 @@
 class ManualChapter < ActiveRecord::Base
 	belongs_to :manual
 
-	acts_as_nested_set :dependent => :destroy	
+	acts_as_nested_set#, :dependent => :destroy	
+
+	#attr_accessible :parent_chapter_id
 
 	after_save :update_nested_set_attributes
 
@@ -25,12 +27,18 @@ class ManualChapter < ActiveRecord::Base
   	end
 
   	def parent_chapter_id
-    	@parent_chapter_id
-  	end	
+    	if parent
+    		return parent.id
+    	elsif @parent_chapter_id
+    		return @parent_chapter_id
+    	else
+    		return nil
+    	end
+  	end
 
-	def possible_parents
+  	def possible_parents
 		if manual 
-			return manual.root.descendants - self_and_descendants			
+			return manual.root.descendants - self_and_descendants
 		else
 			return []
 		end
@@ -53,7 +61,7 @@ class ManualChapter < ActiveRecord::Base
   	def update_parent  		
   		@parent_chapter = nil
 
-  		if !parent_chapter_id  			
+  		if !@parent_chapter_id  			
   			if manual.root
   				@parent_chapter = manual.root
   			end  			
