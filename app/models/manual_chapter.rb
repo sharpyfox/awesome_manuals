@@ -30,7 +30,7 @@ class ManualChapter < ActiveRecord::Base
 
 	def possible_parents
 		if manual 
-			return manual.root.descendants - self_and_descendants
+			return manual.root.descendants - self_and_descendants			
 		else
 			return []
 		end

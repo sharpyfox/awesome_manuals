@@ -1,120 +1,107 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_chapter:
+root_chapter:
   id: 1
+  manual_id: 2
+  custom_title: nil
+  use_custom_title: true
+  wiki_page_id: nil
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+first_chapter:
+  id: 2
   manual_id: 2
   custom_title: First Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: nil
-  lft: 1
-  rgt: 2
+  parent_id: 1
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 second_chapter:
-  id: 2
+  id: 3
   manual_id: 2
   custom_title: Second Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: nil
-  lft: 3
-  rgt: 4
+  parent_id: 1
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 third_chapter:
-  id: 3
+  id: 4
   manual_id: 2
   custom_title: Third Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: nil
-  lft: 5
-  rgt: 6
+  parent_id: 1
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 first_first_chapter:
-  id: 4
+  id: 5
   manual_id: 2
   custom_title: First First Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: 1
-  lft: 7
-  rgt: 8
+  parent_id: 2
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 first_second_chapter:
-  id: 5
+  id: 6
   manual_id: 2
   custom_title: First Second Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: 1
-  lft: 9
-  rgt: 10
+  parent_id: 2
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 first_third_chapter:
-  id: 6
+  id: 7
   manual_id: 2
   custom_title: First Third Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: 1
-  lft: 11
-  rgt: 12
+  parent_id: 2
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 first_second_first_chapter:
-  id: 7
+  id: 8
   manual_id: 2
   custom_title: First Second First Chapter
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: 5
-  lft: 13
-  rgt: 14
+  parent_id: 6
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 some_chapter:
-  id: 8
-  manual_id: 1
+  id: 9
+  manual_id: 4
   custom_title: Title
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: nil
-  lft: 15
-  rgt: 16
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 chapter_with_one_child:
-  id: 9
-  manual_id: 2
+  id: 10
+  manual_id: 3
   custom_title: Title
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: nil
-  lft: 16
-  rgt: 17
   created_at: 2012-09-29
   updated_at: 2012-10-01
 
 chapt:
-  id: 10
-  manual_id: 2
+  id: 11
+  manual_id: 5
   custom_title: Title
   use_custom_title: true
   wiki_page_id: nil
-  parent_id: 9
-  lft: 18
-  rgt: 19
+  parent_id: 10
   created_at: 2012-09-29
   updated_at: 2012-10-01

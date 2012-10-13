@@ -19,4 +19,9 @@ class ManualTest < ActiveSupport::TestCase
 	man = manuals(:project_without_chapters)   
     assert man.root # if some goin wrong root node must be auto recreated
   end
+
+  # called before every single test
+  	def setup
+    	ManualChapter.rebuild!
+  	end
 end

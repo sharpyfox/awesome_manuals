@@ -15,3 +15,15 @@ project_without_chapters:
   title: Cool project manual
   created_at: 2012-09-30
   updated_at: 2012-10-03
+
+project_004:
+  id: 4
+  title: Cool project manual
+  created_at: 2012-09-30
+  updated_at: 2012-10-03
+
+another_project:
+  id: 5
+  title: Cool project manual
+  created_at: 2012-09-30
+  updated_at: 2012-10-03
