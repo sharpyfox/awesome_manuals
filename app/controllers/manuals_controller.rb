@@ -13,10 +13,11 @@ class ManualsController < ApplicationController
 		@manual = Manual.find(params[:id])
 
         render :pdf => @manual.title, # pdf will download as {manual_title}.pdf
-        :layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
-        :show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
-        :wkhtmltopdf  => 'C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe', # path to binary
-        :extra => 'toc --xsl-style-sheet "C:\test.xsl"'      
+        	:layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
+       	 	:show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
+        	:wkhtmltopdf  => 'C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe', # path to binary
+        	:header => { :right => '[page]' }#,        	
+        	#:extra => 'toc --xsl-style-sheet "C:\test.xsl"'
 	end
   
 	def new
