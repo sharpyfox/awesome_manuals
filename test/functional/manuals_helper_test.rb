@@ -22,4 +22,13 @@ class ManualsHelperTest < ActionController::TestCase
 		assert_equal OFFSET_HEADER_RESULT_STRING, replaceHeaders(HEADER_STRING, 5, 0)
 		assert_equal BIG_OFFSET_HEADER_RESULT_STRING, replaceHeaders(HEADER_STRING, 5, 1)
 	end
+
+	CORRECT_TOC_STRING = '<div><ul id="asd" class="toc" attach="asd"><li>asdf</li></ul></div>'
+	ANOTHER_CLASS_TOC_STRING = '<div><ul class="someclass"><li>asdf</li></ul></div>'
+	WITHOUT_CLASS_TOC_STRING = '<div><ul><li>asdf</li></ul></div>'
+	def test_toc_remove
+		assert_equal '<div></div>', removeToc(CORRECT_TOC_STRING)
+		assert_equal ANOTHER_CLASS_TOC_STRING, removeToc(ANOTHER_CLASS_TOC_STRING)
+		assert_equal WITHOUT_CLASS_TOC_STRING, removeToc(WITHOUT_CLASS_TOC_STRING)
+	end
 end

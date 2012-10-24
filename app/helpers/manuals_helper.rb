@@ -21,8 +21,8 @@ module ManualsHelper
     end
   end
 
-  def replaceToc(aTemplate)
-    aTemplate.gsub(/(<ul class="toc).*(<\/ul>)/){""}    
+  def removeToc(aTemplate)
+    aTemplate.gsub(/(<ul.*?class="toc).*(<\/ul>)/){""}    
   end
 
   def replaceHeaders(aTemplate, aOffset, aIndex)
@@ -46,7 +46,7 @@ module ManualsHelper
       zResult = render(:partial => "wiki/content", :locals => {:content => @wiki_pages = WikiPage.find_by_id(aChapter.wiki_page_id).content_for_version(nil)})
       zResult = replaceParagraphs(zResult)
       zResult = replaceHeaders(zResult, aChapter.level, aChapter.use_custom_title ? 1 : 0)
-      zResult = replaceToc(zResult)
+      zResult = removeToc(zResult)
       zResult = replacePictures(zResult)
       zResult
     else
