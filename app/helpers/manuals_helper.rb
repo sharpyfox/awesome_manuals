@@ -15,7 +15,8 @@ module ManualsHelper
         content_type = Redmine::MimeType.of(zAtt.filename)
       end
       
-      return zAtt.diskfile      
+      #return zAtt.diskfile      
+      return zAtt.diskfile.gsub(/JPG/){"png"}
     else
       return zReturn
     end
@@ -69,13 +70,14 @@ module ManualsHelper
         if path.include?(o.parent_id)
           # Remove wrong wrong tailing paths elements
           while path.last != o.parent_id
-            path.pop            
+            path.pop
           end          
         else
-          path << o.parent_id          
+          path << o.parent_id
         end
       elsif i != 0        
       end
+
       if o.use_custom_title
         output <<  "<div class=\"wiki\"><h#{o.level}>" + o.title + "</h#{o.level}></div>"
       end
