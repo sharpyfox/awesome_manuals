@@ -4,7 +4,7 @@
 			<%= t :chapter_parents %>
 		</h3>
 		
-		<%= nested_li(@chapter.ancestors) %>		
+		<%= nested_li(@chapter.ancestors - [@chapter.root]) %>		
 	</div>
 <% else %>
 	<div>
