@@ -49,8 +49,8 @@ class ManualChaptersController < ApplicationController
     	@chapter = ManualChapter.find(params[:id])
     	move_to = params[:order][:move_to]    	
     	case move_to
-      		when "highest" then @chapter.move_left
-			when "lowest" then @chapter.move_right
+      		when "highest" then	@chapter.move_to_left_of(@chapter.siblings.first)
+			when "lowest" then @chapter.move_to_right_of(@chapter.siblings.last)
 			when "higher" then @chapter.move_left
 			when "lower" then @chapter.move_right
 	    end
