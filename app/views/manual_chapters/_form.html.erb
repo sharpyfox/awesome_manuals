@@ -1,17 +1,23 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'forms', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <div class="box">
 	<% labelled_form_for [@manual, @chapter] do |f| %>
 		
 		<p>
-			<%= f.check_box :use_custom_title, :required => true %><br>
-			<%= f.text_field :custom_title %>
+			<%= f.check_box :use_custom_title, :required => true, :class => "float_r" %><br>
+		</p>
+		<p>
+			<%= f.text_field :custom_title, :size => 100, :class => "float_r" %>
 		</p>
 		
 		<p>
-			<%= f.select :wiki_page_id, options_from_collection_for_select(@wiki_pages, :id, :title, @chapter.wiki_page_id), {:include_blank => true} %>
+			<%= f.select :wiki_page_id, options_from_collection_for_select(@wiki_pages, :id, :title, @chapter.wiki_page_id), {:include_blank => true}, :class => "float_r" %>
 		</p>
 
 		<p>
-			<%= f.select :parent_chapter_id, nested_set_options(@chapter.possible_parents, nil) {|i| "#{'-' * i.level}#{i.title}" }, {:include_blank => true} %>
+			<%= f.select :parent_chapter_id, nested_set_options(@chapter.possible_parents, nil) {|i| "#{'-' * i.level}#{i.title}" }, {:include_blank => true} , :class => "float_r"%>
 		</p>
 
 		<%= f.submit l(:button_save) %>
