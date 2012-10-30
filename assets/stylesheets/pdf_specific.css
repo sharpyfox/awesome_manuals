@@ -1,0 +1,46 @@
+body 
+{ 
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype"; 
+	font-size: 12px; 
+	color:black; 
+	padding: 5px;
+}
+  			
+h2, .wiki h1 
+{	
+	font-size: 20px;
+	padding: 2px 10px 1px 0px;
+	margin: 0 0 10px 0; 
+	border-bottom: 1px solid #bbbbbb;
+	color:black;
+}
+
+h3, .wiki h2 
+{
+	font-size: 16px;
+	padding: 2px 10px 1px 0px;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #bbbbbb;
+	color:black;
+}
+
+h4, .wiki h3, h5, .wiki h4, h6, .wiki h5, h7, .wiki h6, h9, .wiki h8, h10, .wiki h9, h11, .wiki h10, h12, .wiki h11 
+{
+	font-size: 13px;
+	padding: 2px 10px 1px 0px;
+	margin-bottom: 5px;
+	border-bottom: 1px dotted #bbbbbb;
+	color:black;			
+}
+
+img 
+{				
+	padding: 1px;
+	max-width: 99%;				
+	border: 1px solid black;
+}
+
+div 
+{
+	text-align: justify;
+}

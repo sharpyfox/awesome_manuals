@@ -56,7 +56,7 @@ class ManualChapter < ActiveRecord::Base
     	return true
   	end
 
-  	private
+  private
 
   	def update_parent  		
   		@parent_chapter = nil
