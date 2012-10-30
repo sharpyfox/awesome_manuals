@@ -16,7 +16,20 @@ class ManualsController < ApplicationController
         	:layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
        	 	:show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
         	:wkhtmltopdf  => 'C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe', # path to binary
-        	:header => { :right => '[page]' }#,        	
+        	:header => { :right => '[page]' },        	
+        	:toc    => {
+                           :depth              => 10,
+                           :header_text        => t(:table_of_content),
+                           :l1_font_size       => 14,
+                           :l2_font_size       => 13,
+                           :l3_font_size       => 12,
+                           :l4_font_size       => 12,
+                           :l5_font_size       => 12,
+                           :l6_font_size       => 12,
+                           :l7_font_size       => 12                           
+                           },
+            :disable_internal_links         => true,
+            :disable_external_links         => true
         	#:extra => 'toc --xsl-style-sheet "C:\test.xsl"'
 	end
   
