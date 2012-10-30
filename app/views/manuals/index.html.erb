@@ -13,6 +13,7 @@
 				<th align="left"><%= t :field_title %></th>
 				<th width = 2%></th>
 				<th width = 2%></th>
+				<th width = 2%></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,6 +22,9 @@
 				<td width = 2%><%= manual.id %></td>
 				<td width = 10%><%= format_time(manual.updated_at) %></td>
 				<td width = 50%><%= link_to manual.title, manual_path(manual) %></td>
+				<td>					
+					<%= link_to t(:button_generate), {:controller => :manuals, :action => :generate, :id => manual.id}, :class => "icon icon-file application-pdf" %>					
+				</td>
 				<td>					
 					<%= link_to t(:button_edit), edit_manual_path(manual), :class => "icon icon-edit" %>					
 				</td>
