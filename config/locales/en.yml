@@ -1,0 +1,21 @@
+ru:  
+  manual: Manual
+  manual_link_new_document: Create new manual
+  manuals: Manuals
+  manual_edit_header: Edit
+  manual_new_chapter: New chapter
+  manual_chapter_created: Successfully created chapter
+  manual_chapter_saved: Successfully updated chapter
+  manual_chapter_deleted: Successfully destroyed chapter
+  manual_chapter_new_header: Create new Chapter
+  manual_chapter_edit_header: Edit Chapter
+  manual_chapter_show_header: Chapter
+  field_wiki_page: Wiki page
+  field_use_custom_title: Use custom header
+  field_custom_title: Custom header
+  field_manual_chapter: Parent chapter
+  chapter_parents: Parents
+  chapter_childs: Descendants
+  table_of_content: Table of contents
+  field_parent_chapter: Parent chapter
+  button_generate: Generate
