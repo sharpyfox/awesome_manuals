@@ -1,0 +1,25 @@
+# Simplified Chinese strings go here for Rails i18n
+# Author: Steven.W
+# Based on file: ru.yml
+
+zh: 
+  manual: 文档
+  manual_link_new_document: 新建文档
+  manuals: 文档
+  manual_edit_header: 编辑
+  manual_new_chapter: 添加章节
+  manual_chapter_created: 章节已创建。
+  manual_chapter_saved: 章节已保存。
+  manual_chapter_deleted: 章节已删除。
+  manual_chapter_new_header: 新建章节页眉
+  manual_chapter_edit_header: 编辑章节页眉
+  manual_chapter_show_header: 显示章节页眉
+  field_wiki_page: WIKI页
+  field_use_custom_title: 修改标题
+  field_custom_title: 自定义标题
+  field_manual_chapter: Страница-владелец
+  chapter_parents: 父章节
+  chapter_childs: 子章节
+  table_of_content: 目录
+  field_parent_chapter: 父章节
+  button_generate: 生成
