@@ -2,7 +2,11 @@
 source "https://rubygems.org"
 
 gem "rake"
-gem "win32-open3"
+
+if RUBY_PLATFORM =~ /(win|w)32$/
+  gem "win32-open3"
+end
+
 gem "wicked_pdf"#, :git =>  "https://github.com/zurb/wicked_pdf.git"
 
 group :test do
