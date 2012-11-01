@@ -1,0 +1,1 @@
+h2. Redmine Awesome manuals plugin !https://secure.travis-ci.org/sharpyfox/awesome_manuals.png(Build Status)!:http://travis-ci.org/sharpyfox/awesome_manuals
