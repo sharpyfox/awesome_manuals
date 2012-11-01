@@ -11,8 +11,8 @@ end
 
 WKHTMLTOPDF_PATH = 
 
-unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_awesome_pdf_export)
-	Redmine::Plugin.register :redmine_awesome_pdf_export do
+unless Redmine::Plugin.registered_plugins.keys.include?(:awesome_manuals)
+	Redmine::Plugin.register :awesome_manuals do
 		name 'Awesome Redmine PDF Documentation plugin'
 		author 'Nikita Vasiliev'
 		author_url 'mailto:sharpyfox@gmail.com'

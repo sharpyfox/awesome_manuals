@@ -15,7 +15,7 @@ class ManualsController < ApplicationController
         render :pdf => @manual.title, # pdf will download as {manual_title}.pdf
         	:layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
        	 	:show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
-        	:wkhtmltopdf  => Setting.plugin_redmine_awesome_pdf_export["wkhtmltopdf_bin"], # path to binary
+        	:wkhtmltopdf  => Setting.plugin_awesome_manuals["wkhtmltopdf_bin"], # path to binary
         	:header => { :right => '[page]' },        	
         	:toc    => {
                            :depth              => 10,
