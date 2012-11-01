@@ -15,11 +15,11 @@ class ManualsController < ApplicationController
         render :pdf => @manual.title, # pdf will download as {manual_title}.pdf
         	:layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
        	 	:show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
-        	:wkhtmltopdf  => 'C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe', # path to binary
+        	:wkhtmltopdf  => Setting.plugin_redmine_awesome_pdf_export["wkhtmltopdf_bin"], # path to binary
         	:header => { :right => '[page]' },        	
         	:toc    => {
                            :depth              => 10,
-                           :header_text        => t(:table_of_content),
+                           :header_text        => "Table of content",
                            :l1_font_size       => 14,
                            :l2_font_size       => 13,
                            :l3_font_size       => 12,
@@ -62,7 +62,7 @@ class ManualsController < ApplicationController
 			render :action => 'edit'
 		end
 	end
-  
+ 
 	def destroy
 		@manual = Manual.find(params[:id])
 		@manual.destroy

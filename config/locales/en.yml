@@ -19,3 +19,4 @@ ru:
   table_of_content: Table of contents
   field_parent_chapter: Parent chapter
   button_generate: Generate
+  wkhtmltopdf_binary_path: Wkhtmltopdf binary path

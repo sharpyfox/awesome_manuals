@@ -1,0 +1,12 @@
+<% content_for :header_tags do %>
+	<style type="text/css">
+		.tabular label{
+			margin-top: 2px;
+		}
+	</style>
+<% end %>
+
+<p>
+	<label><%=t(:wkhtmltopdf_binary_path)%></label>
+	<%= text_field_tag 'settings[wkhtmltopdf_bin]', @settings['wkhtmltopdf_bin'], :size => 100 %><br />
+</p>

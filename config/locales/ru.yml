@@ -19,3 +19,4 @@ ru:
   table_of_content: Оглавление
   field_parent_chapter: Родительский раздел
   button_generate: Сформировать
+  wkhtmltopdf_binary_path: Путь к wkhtmltopdf

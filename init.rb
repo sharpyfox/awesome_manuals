@@ -1,5 +1,16 @@
 require 'redmine'
 
+WINDOWS_DEFAULT_PATH = 'C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe'
+NIX_DEFAUL_PATH = '/usr/local/bin/wkhtmltopdf'
+
+if RUBY_PLATFORM =~ /(win|w)32$/
+	WKHTMLTOPDF_PATH = WINDOWS_DEFAULT_PATH
+else
+	WKHTMLTOPDF_PATH = NIX_DEFAUL_PATH
+end
+
+WKHTMLTOPDF_PATH = 
+
 unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_awesome_pdf_export)
 	Redmine::Plugin.register :redmine_awesome_pdf_export do
 		name 'Awesome Redmine PDF Documentation plugin'
@@ -11,6 +22,10 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_awesome_pdf_exp
 		requires_redmine :version_or_higher => '1.3.0'
 
 		permission :awesome_manuals, {:awesome_manuals => [:index, :new, :edit, :delete]}
+
+		# Settings
+		settings :default => {"wkhtmltopdf_bin" => WKHTMLTOPDF_PATH}, 
+			:partial => "awesome_manuals/settings"
 
 		# Menu
 		menu :application_menu, :awesome_manuals, { :controller => 'manuals', :action => 'index' }, :caption => :manuals		
