@@ -3,41 +3,17 @@
   	<head>
   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    	
   		<title><%= @manual.title %></title>
-  		<%= wicked_pdf_stylesheet_link_tag 'application' %>
-  		<style type="text/css">
-  			body { font-family: "Segoe UI", Frutiger, "Frutiger Linotype"; font-size: 12px; color:black; margin: 8px;}
-  			
-			h2, .wiki h1 {	
-				font-size: 20px;
-				padding: 2px 10px 1px 0px;
-				margin: 0 0 10px 0; 
-				border-bottom: 1px solid #bbbbbb;
-				color:black;
-			}
-			h3, .wiki h2 {
-				font-size: 16px;
-				padding: 2px 10px 1px 0px;
-				margin: 0 0 10px 0;
-				border-bottom: 1px solid #bbbbbb;
-				color:black;
-			}
-			h4, .wiki h3, h5, .wiki h4, h6, .wiki h5, h7, .wiki h6, h9, .wiki h8, h10, .wiki h9, h11, .wiki h10, h12, .wiki h11 {
-				font-size: 13px;
-				padding: 2px 10px 1px 0px;
-				margin-bottom: 5px;
-				border-bottom: 1px dotted #bbbbbb;
-				color:black;			
-			}
-			img {				
-				padding: 1px;
-				border: 1px solid black;
-				max-width: 100%;
-			}
-			div {
-				display: block;
-				text-align: justify;				
-			}			
-  		</style>
+  		<%= wicked_pdf_stylesheet_link_tag 'application' %>  		
+
+  		<%
+  		css_dir = Rails.root.join('public', 'plugin_assets', 'awesome_manuals', 'stylesheets')
+    	css_text = 'pdf_specific'.collect { |source|
+      		"<style type='text/css'>#{File.read(css_dir.join(source+'.css'))}</style>"
+    		}.join("\n")
+    	css_text.respond_to?(:html_safe) ? css_text.html_safe : css_text    	
+    	%>
+    	<%= css_text %>
+
     </head>    
   <body>
   	<%= yield %>  	
