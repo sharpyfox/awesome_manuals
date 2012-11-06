@@ -2,7 +2,7 @@
 <html>
   	<head>
   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    	
-  		<title>@manual.title</title>
+  		<title><%= @manual.title %></title>
   		<%= wicked_pdf_stylesheet_link_tag 'application' %>
   		<style type="text/css">
   			body { font-family: "Segoe UI", Frutiger, "Frutiger Linotype"; font-size: 12px; color:black; margin: 8px;}
@@ -38,8 +38,8 @@
 				text-align: justify;				
 			}			
   		</style>
-    </head>
-  <body>  	
+    </head>    
+  <body>
   	<%= yield %>  	
   </body>
 </html>
