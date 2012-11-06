@@ -24,7 +24,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:awesome_manuals)
 		permission :awesome_manuals, {:awesome_manuals => [:index, :new, :edit, :delete]}
 
 		# Settings
-		settings :default => {"wkhtmltopdf_bin" => WKHTMLTOPDF_PATH}, 
+		settings :default => {:wkhtmltopdf_bin => WKHTMLTOPDF_PATH}, 
 			:partial => "awesome_manuals/settings"
 
 		# Menu

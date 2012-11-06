@@ -8,5 +8,5 @@
 
 <p>
 	<label><%=t(:wkhtmltopdf_binary_path)%></label>
-	<%= text_field_tag 'settings[wkhtmltopdf_bin]', @settings['wkhtmltopdf_bin'], :size => 100 %><br />
+	<%= text_field_tag "settings[#{:wkhtmltopdf_bin}]", @settings[:wkhtmltopdf_bin], :size => 100 %><br />
 </p>
