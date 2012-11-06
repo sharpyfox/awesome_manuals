@@ -15,8 +15,7 @@ module ManualsHelper
         content_type = Redmine::MimeType.of(zAtt.filename)
       end
       
-      #return zAtt.diskfile      
-      return zAtt.diskfile.gsub(/JPG/){"png"}
+      return zAtt.diskfile
     else
       return zReturn
     end
@@ -24,6 +23,10 @@ module ManualsHelper
 
   def removeToc(aTemplate)
     aTemplate.gsub(/(<ul.*?class="toc).*(<\/ul>)/){""}    
+  end
+
+  def replaceInternalLinks(aTemplate)
+    aTemplate.gsub(/(<a.*?href=)".*?\/wiki\/(.*?)"/){"#{$1}\"##{$2}\""}
   end
 
   def replaceHeaders(aTemplate, aOffset, aIndex)
@@ -49,6 +52,7 @@ module ManualsHelper
       zResult = replaceHeaders(zResult, aChapter.level, aChapter.use_custom_title ? 1 : 0)
       zResult = removeToc(zResult)
       zResult = replacePictures(zResult)
+      zResult = replaceInternalLinks(zResult)
       zResult
     else
       ""
