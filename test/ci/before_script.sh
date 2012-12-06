@@ -5,9 +5,6 @@ gem list --local
 # Fix for "deprecated" warning on Ubuntu in travis
 gem update --system 1.6.2
 
-#Fix for mocha "deprecated" warning
-gem install --version '= 0.12.1' mocha
-
 # Git repo of the Redmine
 
 # Prepare Redmine
@@ -20,7 +17,14 @@ git submodule update --init --recursive
 cp -r ~/builds/*/$REPO_NAME vendor/plugins/$PLUGIN_DIR
 
 #export BUNDLE_GEMFILE=$TARGET_DIR/Gemfile
-bundle install  --prefer-loca --without=$BUNDLE_WITHOUT # prefer local for mocha version
+bundle install --without=$BUNDLE_WITHOUT
+
+gem uninstall mocha --version ">0.12.1"
+
+#Fix for mocha "deprecated" warning
+gem install --version '= 0.12.1' mocha
+
+bundle install --local --without=$BUNDLE_WITHOUT
 
 echo "creating $DB database"
 case $DB in
