@@ -4,7 +4,7 @@
 gem update --system 1.6.2
 
 #Fix for mocha "deprecated" warning
-gem install mocha 0.12.1
+gem install --version '= 0.12.1' mocha
 
 # Git repo of the Redmine
 
