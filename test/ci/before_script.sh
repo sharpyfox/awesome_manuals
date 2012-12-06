@@ -3,6 +3,9 @@
 # Fix for "deprecated" warning on Ubuntu in travis
 gem update --system 1.6.2
 
+#Fix for mocha "deprecated" warning
+gem install mocha 0.12.1
+
 # Git repo of the Redmine
 
 # Prepare Redmine
