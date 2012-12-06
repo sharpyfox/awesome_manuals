@@ -20,3 +20,8 @@ ru:
   field_parent_chapter: Родительский раздел
   button_generate: Сформировать
   wkhtmltopdf_binary_path: Путь к wkhtmltopdf
+  manual_new_chapter_from_wiki: Добавить раздел импортом из wiki
+  manual_chapter_import_header: Импорт из wiki
+  import_from_wiki: Импортировать структуру из wiki
+  field_paste_content: Вставлять контент
+  import: Импортировать

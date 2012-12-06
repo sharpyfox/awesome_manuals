@@ -76,3 +76,38 @@ wiki_pages_011:
   wiki_id: 1
   protected: false
   parent_id: 
+root_wiki_page: 
+  created_on: 2007-03-08 00:18:07 +01:00
+  title: Root wiki page
+  id: 12
+  wiki_id: 1
+  protected: false
+  parent_id: 
+wiki_page_013: 
+  created_on: 2007-03-08 00:18:07 +01:00
+  title: Page
+  id: 13
+  wiki_id: 1
+  protected: false
+  parent_id: 12
+wiki_page_014: 
+  created_on: 2007-03-08 00:18:07 +01:00
+  title: Page
+  id: 14
+  wiki_id: 1
+  protected: false
+  parent_id: 12
+wiki_page_015: 
+  created_on: 2007-03-08 00:18:07 +01:00
+  title: Page
+  id: 15
+  wiki_id: 1
+  protected: false
+  parent_id: 12
+wiki_page_016: 
+  created_on: 2007-03-08 00:18:07 +01:00
+  title: Page
+  id: 16
+  wiki_id: 1
+  protected: false
+  parent_id: 14

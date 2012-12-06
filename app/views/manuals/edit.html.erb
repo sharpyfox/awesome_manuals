@@ -6,6 +6,7 @@
 
 <div class="contextual">	
 	<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@manual), :class => "icon icon-add" %>
+	<%= link_to t(:manual_new_chapter_from_wiki), new_chapter_from_wiki_path(@manual), :class => "icon icon-move" %>
 </div>
 
 <%= render :partial => "manual_chapters/childs_order" %>

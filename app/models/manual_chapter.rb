@@ -3,8 +3,6 @@ class ManualChapter < ActiveRecord::Base
 
 	acts_as_nested_set#, :dependent => :destroy	
 
-	#attr_accessible :parent_chapter_id
-
 	after_save :update_nested_set_attributes
 
 	validates_presence_of :manual
@@ -55,6 +53,18 @@ class ManualChapter < ActiveRecord::Base
 
     	return true
   	end
+
+  def update_from_wiki_struct(aWikiPage)    
+    self.wiki_page_id = aWikiPage.id
+    self.use_custom_title = false
+    self.save
+
+    WikiPage.find_all_by_parent_id(aWikiPage.id).each do |child_page|
+      child_chapter = manual.manual_chapters.build
+      child_chapter.parent_chapter_id = id
+      child_chapter.update_from_wiki_struct(child_page)
+    end
+  end
 
   private
 

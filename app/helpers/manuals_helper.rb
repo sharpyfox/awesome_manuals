@@ -47,7 +47,9 @@ module ManualsHelper
   def getContent(aChapter)    
     zWikiPage = WikiPage.find_by_id(aChapter.wiki_page_id)
     if zWikiPage      
-      zResult = render(:partial => "wiki/content", :locals => {:content => @wiki_pages = WikiPage.find_by_id(aChapter.wiki_page_id).content_for_version(nil)})
+      if (aChapter.paste_content)
+        zResult = render(:partial => "wiki/content", :locals => {:content => @wiki_pages = WikiPage.find_by_id(aChapter.wiki_page_id).content_for_version(nil)})
+      end
       zResult = replaceParagraphs(zResult)
       zResult = replaceHeaders(zResult, aChapter.level, aChapter.use_custom_title ? 1 : 0)
       zResult = removeToc(zResult)

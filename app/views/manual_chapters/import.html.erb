@@ -1,0 +1,19 @@
+<h2><%= t :manual_chapter_import_header %></h2>
+
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'forms', :plugin => 'awesome_manuals' %>
+<% end %>
+
+<div class="box">
+	<% form_for @chapter, :url => @new_chapter_url do |f| %>
+		<div class = "control-group">
+			<%= f.label :wiki_page_id, t(:field_wiki_page), :class => "control-label"%>
+			<div>
+				<%= f.select :wiki_page_id, options_from_collection_for_select(@wiki_pages, :id, :title, @chapter.wiki_page_id), {:include_blank => true} %>
+			</div>			
+		</div>		
+		<div class = "control-group">
+			<%= f.submit l(:import) %>
+		</div>
+	<% end %> 
+</div>
