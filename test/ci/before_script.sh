@@ -1,5 +1,7 @@
 #!/bin/sh
 
+gem list --local
+
 # Fix for "deprecated" warning on Ubuntu in travis
 gem update --system 1.6.2
 
