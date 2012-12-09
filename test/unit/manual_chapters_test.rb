@@ -5,8 +5,9 @@ class ManualChapterTest < ActiveSupport::TestCase
   	fixtures :manual_chapters
 
   	#set the class to use for awesome_wiki_pages.yml
-  	#set_fixture_class :awesome_wiki_pages => WikiPage
-	#fixtures :awesome_wiki_pages
+  	fixtures :awesome_wiki_pages
+  	set_fixture_class :awesome_wiki_pages => WikiPage
+	
   
  	def test_manual_presence_validate
    	assert_equal false, ManualChapter.new(:manual_id => nil).valid?
