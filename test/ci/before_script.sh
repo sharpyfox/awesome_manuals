@@ -16,15 +16,11 @@ git submodule update --init --recursive
 # Copy over the already downloaded plugin 
 cp -r ~/builds/*/$REPO_NAME vendor/plugins/$PLUGIN_DIR
 
+#Fix for mocha "deprecated" warning
+ruby -e "str = File.read('Gemfile');File.open('Gemfile', 'w+') { |file| file.write(str.gsub(/\"mocha\"$/, '\"mocha\", \"0.12.3\"')) }"
+
 #export BUNDLE_GEMFILE=$TARGET_DIR/Gemfile
 bundle install --without=$BUNDLE_WITHOUT
-
-gem uninstall mocha --version ">0.12.1"
-
-#Fix for mocha "deprecated" warning
-gem install --version '= 0.12.1' mocha
-
-bundle install --local --without=$BUNDLE_WITHOUT
 
 echo "creating $DB database"
 case $DB in
