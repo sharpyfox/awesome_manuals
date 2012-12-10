@@ -1,0 +1,13 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'intersect', :plugin => 'awesome_manuals' %>
+<% end %>
+
+<%= render "parents" %>
+
+<h2>
+	<%= t :manual_chapter_intersect_header %>
+</h2>
+
+<div>
+	<%= intersect_list(@chapter.descendants) %>
+</div>

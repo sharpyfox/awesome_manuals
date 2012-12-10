@@ -99,6 +99,20 @@ class ManualChaptersControllerTest < ActionController::TestCase
   		assert_routing({ :path => "manuals/1/manual_chapters/create_from_wiki", :method => :post }, { :controller => "manual_chapters", :action => "create_from_wiki", :manual_id => "1" })
   	end
 
+  	def test_non_existing_routes_to_intersect
+    	assert_raises(ActionController::MethodNotAllowed) do
+      		assert_routing({ :path => "manual_chapters/1/intersect", :method => :post }, { })
+    	end
+
+    	assert_raises(ActionController::MethodNotAllowed) do
+      		assert_routing({ :path => "manual_chapters/1/intersect", :method => :put }, { })
+    	end
+  	end
+
+  	def test_existing_routes_to_intersect
+  		assert_routing({ :path => "manual_chapters/1/intersect", :method => :get }, { :controller => "manual_chapters", :action => "intersect", :id => "1" })
+  	end
+
 	def test_non_existing_routes_to_import
     	assert_raises(ActionController::MethodNotAllowed) do
       		assert_routing({ :path => "manual_chapters/1/import", :method => :post }, { })

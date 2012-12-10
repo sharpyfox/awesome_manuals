@@ -47,6 +47,10 @@ class ManualChaptersController < ApplicationController
   		@chapter = ManualChapter.find(params[:id])
   		@new_chapter_url = update_from_wiki_path(@chapter)
   	end
+
+  	def intersect
+  		@chapter = ManualChapter.find(params[:id])
+  	end
   
 	def update
 		@chapter = ManualChapter.find(params[:id])		

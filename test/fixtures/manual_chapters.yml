@@ -127,3 +127,39 @@ chapt:
   rgt: 21
   created_at: 2012-09-29
   updated_at: 2012-10-01
+
+diff_chapter:
+  id: 12
+  manual_id: 6
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: 12
+  parent_id: nil
+  lft: 23
+  rgt: 28
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+chapter_001:
+  id: 13
+  manual_id: 6
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: 13
+  parent_id: 12
+  lft: 24
+  rgt: 25
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+chapter_002:
+  id: 14
+  manual_id: 6
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: 2
+  parent_id: 12
+  lft: 26
+  rgt: 27
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
