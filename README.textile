@@ -1,1 +1,3 @@
 h2. Redmine Awesome manuals plugin !https://secure.travis-ci.org/sharpyfox/awesome_manuals.png(Build Status)!:http://travis-ci.org/sharpyfox/awesome_manuals
+
+This plugin use "Figue Icons":http://p.yusukekamiyamane.com/ licensed by Creative Commons Attribution 3.0

@@ -1,3 +1,7 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <h2>
 	<%= t :manual_edit_header %>
 </h2>
@@ -6,7 +10,7 @@
 
 <div class="contextual">	
 	<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@manual), :class => "icon icon-add" %>
-	<%= link_to t(:manual_new_chapter_from_wiki), new_chapter_from_wiki_path(@manual), :class => "icon icon-move" %>
+	<%= link_to t(:manual_new_chapter_from_wiki), new_chapter_from_wiki_path(@manual), :class => "icon icon-import" %>
 </div>
 
 <%= render :partial => "manual_chapters/childs_order" %>

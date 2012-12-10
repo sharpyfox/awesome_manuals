@@ -1,2 +1,6 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <h2><%= t :manual_page_new_header %></h2>
 <%= render "form" %>

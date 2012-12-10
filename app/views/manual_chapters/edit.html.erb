@@ -1,16 +1,20 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <%= render "parents" %>
 
 <h2><%= t :manual_chapter_edit_header %></h2>
 
 <div class="contextual">
-	<%= link_to t(:import_from_wiki), { :action => 'import', :id => @chapter}, :class => "icon icon-move" %>
+	<%= link_to t(:import_from_wiki), { :action => 'import', :id => @chapter}, :class => "icon icon-import" %>
 </div>
 
 <%= render "form" %>
 
 <div class="contextual">		
 		<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-add" %>
-		<%= link_to t(:manual_new_chapter_from_wiki), new_chapter_from_wiki_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-move" %>
+		<%= link_to t(:manual_new_chapter_from_wiki), new_chapter_from_wiki_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-import" %>
 </div>
 
 <%= render "childs_order" %>

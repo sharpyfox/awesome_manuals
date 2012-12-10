@@ -1,8 +1,13 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <%= render "parents" %>
 
 <div class="contextual">
 	<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-add" %>
 	<%= link_to t(:button_edit), edit_manual_chapter_path(@chapter), :class => "icon icon-edit" %>	
+	<%= link_to t(:button_show_intersect), chapt_and_pages_intersect_path(@chapter), :class => "icon icon-intersect" %>	
 </div>
 
 <h2>

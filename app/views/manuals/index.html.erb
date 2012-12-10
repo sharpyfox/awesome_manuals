@@ -1,3 +1,7 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
+<% end %>
+
 <div class="contextual">
 	<%= link_to t(:manual_link_new_document), new_manual_path, :class => "icon icon-add" %>
 </div>
