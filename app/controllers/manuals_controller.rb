@@ -1,18 +1,13 @@
 class ManualsController < ApplicationController
 	unloadable
 
+	before_filter :find_manual, :only => [:show, :edit, :generate, :update, :destroy]
+
 	def index
 		@manuals = Manual.find(:all)
 	end
   
-	def show
-		@manual = Manual.find(params[:id])		
-	end
-
 	def generate
-		@manual = Manual.find(params[:id])
-
-
         render :pdf => @manual.title, # pdf will download as {manual_title}.pdf
         	:layout => 'manual_pdf', # uses views/layouts/manual_pdf.erb
        	 	:show_as_html => params[:debug].present?, # renders html version if you set debug=true in URL
@@ -36,12 +31,10 @@ class ManualsController < ApplicationController
 	end
   
 	def edit
-		@manual = Manual.find(params[:id])
 		@chapter = @manual.root
 	end
   
 	def update
-		@manual = Manual.find(params[:id])
 		@chapter = @manual.root
 		if @manual.update_attributes(params[:manual])
 			flash[:notice] = "Successfully updated article."
@@ -52,9 +45,16 @@ class ManualsController < ApplicationController
 	end
  
 	def destroy
-		@manual = Manual.find(params[:id])
 		@manual.destroy
 		flash[:notice] = "Successfully destroyed manual."
 		redirect_to manuals_url
+	end
+
+	private
+		def find_manual
+		@manual = Manual.find_by_id(params[:id])
+		if !(@manual)
+			render_404
+		end	
 	end
 end

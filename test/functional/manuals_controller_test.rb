@@ -12,6 +12,13 @@ class ManualsControllerTest < ActionController::TestCase
 		get :show, :id => Manual.first
 		assert_template 'show'
 	end
+
+	def test_show_nonexistent
+		get :show, :id => Manual.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_new
 		get :new
@@ -41,6 +48,13 @@ class ManualsControllerTest < ActionController::TestCase
 		get :edit, :id => Manual.first
 		assert_template 'edit'
 	end
+
+	def test_edit_nonexistent
+		get :edit, :id => Manual.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_update_invalid
 		Manual.any_instance.stubs(:valid?).returns(false)
@@ -53,6 +67,13 @@ class ManualsControllerTest < ActionController::TestCase
 		put :update, :id => Manual.first
 		assert_redirected_to manual_url(assigns(:manual))
 	end
+
+	def test_update_nonexistent
+		put :show, :id => Manual.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_destroy
 		manual = manuals(:with_one_child)
@@ -61,5 +82,12 @@ class ManualsControllerTest < ActionController::TestCase
 		assert_redirected_to manuals_url
 		assert !Manual.exists?(manual.id)
 		assert_equal 0, ManualChapter.find_all_by_manual_id(manual.id).count
+	end
+
+	def test_destroy_nonexistent
+		delete :destroy, :id => Manual.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
 	end
 end

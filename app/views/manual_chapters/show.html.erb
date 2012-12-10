@@ -13,7 +13,11 @@
 </div>
 
 <h2>
-	<%= t :manual_chapter_show_header %> <%= " " + @chapter.title %>
+	<% if @chapter == @chapter.manual.root %>
+		<%= t :manual_root_chapter_header %>
+	<% else %>
+		<%= t :manual_chapter_show_header %> <%= " " + @chapter.title %>
+	<% end %>
 </h2>
 
 <h3>

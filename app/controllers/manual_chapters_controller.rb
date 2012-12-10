@@ -2,6 +2,7 @@ class ManualChaptersController < ApplicationController
 	unloadable
 	
 	before_filter :fetch_wiki_pages
+	before_filter :find_chapter, :only => [:show, :edit, :import, :intersect, :update, :reorder, :update_from_wiki, :destroy]
   
 	def new
 		new_common_part
@@ -35,25 +36,11 @@ class ManualChaptersController < ApplicationController
 		end
 	end
 	
-	def show
-		@chapter = ManualChapter.find(params[:id])		
-	end
-  
-	def edit		
-		@chapter = ManualChapter.find(params[:id])
-	end
-
 	def import
-  		@chapter = ManualChapter.find(params[:id])
   		@new_chapter_url = update_from_wiki_path(@chapter)
-  	end
-
-  	def intersect
-  		@chapter = ManualChapter.find(params[:id])
   	end
   
 	def update
-		@chapter = ManualChapter.find(params[:id])		
 		if @chapter.update_attributes(params[:manual_chapter])
 			flash[:notice] = "Successfully updated chapter."
 			redirect_to manual_chapter_url(@chapter)
@@ -63,7 +50,6 @@ class ManualChaptersController < ApplicationController
 	end
 
 	def update_from_wiki
-  		@chapter = ManualChapter.find(params[:id])
   		@page = WikiPage.find(params[:manual_chapter][:wiki_page_id])
   		if (@chapter != nil) && (@page != nil)  			
   			@chapter.update_from_wiki_struct(@page)
@@ -75,14 +61,12 @@ class ManualChaptersController < ApplicationController
   	end
   
 	def destroy
-		@chapter = ManualChapter.find(params[:id])
 		@chapter.destroy
 		flash[:notice] = "Successfully destroyed chapter."
 		redirect_to manual_url(@chapter.manual_id)
 	end
 
 	def reorder    	
-    	@chapter = ManualChapter.find(params[:id])
     	move_to = params[:order][:move_to]    	
     	case move_to
       		when "highest" then	@chapter.move_to_left_of(@chapter.siblings.first)
@@ -103,6 +87,13 @@ class ManualChaptersController < ApplicationController
 	
 	def fetch_wiki_pages
 		@wiki_pages = WikiPage.all.sort_by(&:title)
+	end
+
+	def find_chapter
+		@chapter = ManualChapter.find_by_id(params[:id])
+		if !(@chapter)
+			render_404
+		end	
 	end
 
 	def new_common_part

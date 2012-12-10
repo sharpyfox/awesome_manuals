@@ -13,6 +13,13 @@ class ManualChaptersControllerTest < ActionController::TestCase
 		get :show, :id => ManualChapter.first
 		assert_template 'show'
 	end
+
+	def test_show_nonexistent
+		get :show, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_new
 		get :new, :manual_id => Manual.first
@@ -59,6 +66,13 @@ class ManualChaptersControllerTest < ActionController::TestCase
 		get :edit, :id => ManualChapter.first
 		assert_template 'edit'
 	end
+
+	def test_edit_nonexistent
+		get :edit, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_update_invalid
 		ManualChapter.any_instance.stubs(:valid?).returns(false)
@@ -71,6 +85,13 @@ class ManualChaptersControllerTest < ActionController::TestCase
 		put :update, :id => ManualChapter.first
 		assert_redirected_to manual_chapter_url(assigns(:chapter))
 	end
+
+	def test_update_nonexistent
+		put :update, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
   
 	def test_destroy
 		manual_chapter = manual_chapters(:chapter_with_one_child)
@@ -81,9 +102,23 @@ class ManualChaptersControllerTest < ActionController::TestCase
 		assert !ManualChapter.exists?(manual_chapter.id)
 	end
 
+	def test_destroy_nonexistent
+		delete :destroy, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
+
 	def test_import
 		get :import, :id => ManualChapter.first
 		assert_template 'import'
+	end
+
+	def test_edit_nonexistent
+		get :import, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
 	end
 
 	def test_update_from_wiki
@@ -91,6 +126,20 @@ class ManualChaptersControllerTest < ActionController::TestCase
 		params = {:wiki_page_id => WikiPage.first }
 		put :update_from_wiki, :id => ManualChapter.first, :manual_chapter => params
 		assert_redirected_to manual_chapter_url(assigns(:chapter))
+	end
+
+	def test_update_from_wiki_nonexistent
+		put :update_from_wiki, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
+	end
+
+	def test_reorder_nonexistent
+		post :reorder, :id => ManualChapter.last.id + 10
+		
+		assert_response :not_found
+		assert_template 'common/error'
 	end
 
 	############################### routes ###############################################
