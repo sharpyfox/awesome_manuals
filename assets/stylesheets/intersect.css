@@ -1,21 +1,24 @@
 .extra-chapter
 {
 	background-color: #DDFFDD;
+	list-style-image: url(../images/blue-document-insert.png);
 }
 
 .missing-page
 {	
 	background-color: #FFDDDD;
+	list-style-image: url(../images/cross-script.png);
 }
 
 .exactly
 {
-	
+	list-style-image: url(../images/chain.png);	
+	li
 }
 
 li.exactly, .missing-page, .extra-chapter
 {
-	padding: 1px;
 	padding-left: 3px;
 	padding-top: 2px;
+	list-style-position: inside;
 }
