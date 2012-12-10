@@ -14,7 +14,7 @@ module ManualChaptersHelper
 
     return '' if objects.size == 0
 
-    output = '<ul><li>'
+    output = ''
     path = [nil]
 
     objects.each_with_index do |o, i|      
@@ -37,7 +37,7 @@ module ManualChaptersHelper
       output << link_to( o.title, o )
     end
 
-    output << '</li></ul>' * path.length
+    output << '</li></ul>' * (path.length - 1)
     output.html_safe
   end
 
@@ -46,12 +46,12 @@ module ManualChaptersHelper
 
     return '' if objects.size == 0
 
-    output = '<ul><li>'
+    output = ''
     path = [nil]
     extraChapters = []
     extraPages = []
 
-    get_diff(objects.first.root, WikiPage.find_by_id(objects.first.root.wiki_page_id))[:extraChapters]
+    get_chapter_pages_intersect(objects.first.root, WikiPage.find_by_id(objects.first.root.wiki_page_id))[:extraChapters]
 
     objects.each_with_index do |o, i|
       if o.parent_id != path.last
@@ -71,7 +71,7 @@ module ManualChaptersHelper
         output << '</li><li>'
       end
 
-      res = get_diff(o.parent, WikiPage.find_by_id(o.parent.wiki_page_id))
+      res = get_chapter_pages_intersect(o.parent, WikiPage.find_by_id(o.parent.wiki_page_id))
       extraChapters = res[:extraChapters]
       extraPages = res[:extraPages]
 
@@ -89,7 +89,7 @@ module ManualChaptersHelper
       end
     end
 
-    output << '</li></ul>' * path.length
+    output << '</li></ul>' * (path.length - 1)
     output.html_safe
   end
 
