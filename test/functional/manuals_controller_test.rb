@@ -13,7 +13,7 @@ class ManualsControllerTest < ActionController::TestCase
 		assert_template 'show'
 	end
 
-	def test_show_nonexistent
+	def test_show_nonexistent		
 		get :show, :id => Manual.last.id + 10
 		
 		assert_response :not_found

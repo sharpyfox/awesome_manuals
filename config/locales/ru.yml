@@ -30,3 +30,6 @@ ru:
   haventparents: Узел не имеет родительских элементов
   haventchildrens: Узел не имеет дочерних элементов
   manual_root_chapter_header: Корневой раздел
+  project_module_awesome_manuals_module: Документация
+  permission_edit_manuals: Редактирование документации
+  permission_generate_manuals: Формирование документации

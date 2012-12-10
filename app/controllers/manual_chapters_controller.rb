@@ -1,6 +1,6 @@
 class ManualChaptersController < ApplicationController
 	unloadable
-	
+		
 	before_filter :fetch_wiki_pages
 	before_filter :find_chapter, :only => [:show, :edit, :import, :intersect, :update, :reorder, :update_from_wiki, :destroy]
   

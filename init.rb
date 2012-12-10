@@ -21,11 +21,20 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:awesome_manuals)
 		# Redmine Version
 		requires_redmine :version_or_higher => '1.3.0'
 
-		permission :awesome_manuals, {:awesome_manuals => [:index, :new, :edit, :delete]}
-
 		# Settings
 		settings :default => {:wkhtmltopdf_bin => WKHTMLTOPDF_PATH}, 
 			:partial => "awesome_manuals/settings"
+
+		project_module :awesome_manuals_module do
+			permission :edit_manuals, { 
+      			:manuals => [:edit, :destroy],
+      			:manual_chapters => [:edit, :destroy]
+    		}
+    	
+    		permission :generate_manuals, { 
+      			:manuals => [:generate]
+    		}
+    	end
 
 		# Menu
 		menu :top_menu, :awesome_manuals, { :controller => 'manuals', :action => 'index' }, :caption => :manuals
