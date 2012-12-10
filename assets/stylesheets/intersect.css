@@ -25,7 +25,10 @@ li.exactly, .missing-page, .extra-chapter
 
 ul.intersect-list
 {
+	-moz-padding-start: 10px;
 	-webkit-padding-start: 10px;
-	-webkit-margin-before: 0px;
-	-webkit-margin-after: 0px;
+	-khtml-padding-start 10px;
+	-o-padding-start 10px;
+	padding-start 10px;
+	padding: 10px;
 }
