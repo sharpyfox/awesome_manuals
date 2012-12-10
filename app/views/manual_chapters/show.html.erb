@@ -2,7 +2,9 @@
 	<%= stylesheet_link_tag 'awesome_manuals', :plugin => 'awesome_manuals' %>
 <% end %>
 
-<%= render "parents" %>
+<% if @chapter != @chapter.manual.root %>
+	<%= render "parents" %>
+<% end %>
 
 <div class="contextual">
 	<%= link_to t(:manual_new_chapter), new_manual_manual_chapter_path(@chapter.manual, {:parent_id => @chapter.id}), :class => "icon icon-add" %>
