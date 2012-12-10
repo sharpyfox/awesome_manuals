@@ -15,5 +15,7 @@
 
 li.exactly, .missing-page, .extra-chapter
 {
-	padding :2px;
+	padding: 1px;
+	padding-left: 3px;
+	padding-top: 2px;
 }
