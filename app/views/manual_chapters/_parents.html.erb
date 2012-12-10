@@ -1,13 +1,13 @@
-<% if !@chapter.ancestors.empty? %>
-	<div>
-		<h3>
-			<%= t :chapter_parents %>
-		</h3>
-		
-		<%= nested_li(@chapter.ancestors - [@chapter.root]) %>		
-	</div>
+<div>
+	<h3>
+		<%= t :chapter_parents %>
+	</h3>
+
+<% if !(@chapter.ancestors - [@chapter.root]).empty? %>
+	<%= nested_li(@chapter.ancestors - [@chapter.root]) %>		
 <% else %>
-	<div>
-		&nbsp;
-	</div>
+	<%= t :haventparents %>
+	<br>&nbsp;
 <% end %>
+
+</div>

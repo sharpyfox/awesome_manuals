@@ -22,3 +22,8 @@
   <%= nested_li(@chapter.descendants) %>
 </div>
 
+<% if @chapter.children.empty? %>
+	<%= t :haventchildrens %>
+<% end %>
+
+

@@ -27,3 +27,5 @@ ru:
   import: Импортировать
   manual_chapter_intersect_header: Сравнение структуры
   button_show_intersect: Проанализировать структуру
+  haventparents: Узел не имеет родительских элементов
+  haventchildrens: Узел не имеет дочерних элементов
