@@ -22,3 +22,10 @@ li.exactly, .missing-page, .extra-chapter
 	padding-top: 2px;
 	list-style-position: inside;
 }
+
+ul.intersect-list
+{
+	-webkit-padding-start: 10px;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+}

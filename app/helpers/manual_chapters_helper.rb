@@ -60,12 +60,12 @@ module ManualChaptersHelper
           # Remove wrong wrong tailing paths elements
           while path.last != o.parent_id
             path.pop
-            output << '</li></ul>'
+            output << '</li></ul class = "intersect-list">'
           end
           output << '</li><li class = "'
         else
           path << o.parent_id
-          output << '<ul><li class = "'
+          output << '<ul class = "intersect-list"><li class = "'
         end
       elsif i != 0
         output << '</li><li class = "'
