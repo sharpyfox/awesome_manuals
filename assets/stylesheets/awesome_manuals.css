@@ -5,3 +5,7 @@
 .icon-import {
 	background-image: url(../images/blue-document-import.png);
 }
+
+.contextual {
+	padding-right: 10px;
+}

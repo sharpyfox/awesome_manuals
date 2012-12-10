@@ -6,6 +6,10 @@
 	<%= t :manual_edit_header %>
 </h2>
 
+<div class="contextual">
+	<%= link_to t(:import_from_wiki), { :controller => 'manual_chapters', :action => 'import', :id => @manual.root}, :class => "icon icon-import" %>
+</div>
+
 <%= render "form" %>
 
 <div class="contextual">	

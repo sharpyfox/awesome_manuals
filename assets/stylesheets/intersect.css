@@ -1,11 +1,19 @@
 .extra-chapter
 {
 	background-color: #DDFFDD;
-	//padding: 3px;
 }
 
 .missing-page
 {	
 	background-color: #FFDDDD;
-	//padding: 3px;
+}
+
+.exactly
+{
+	
+}
+
+li.exactly, .missing-page, .extra-chapter
+{
+	padding :2px;
 }

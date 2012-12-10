@@ -62,13 +62,13 @@ module ManualChaptersHelper
             path.pop
             output << '</li></ul>'
           end
-          output << '</li><li>'
+          output << '</li><li class = "'
         else
           path << o.parent_id
-          output << '<ul><li>'          
+          output << '<ul><li class = "'
         end
       elsif i != 0
-        output << '</li><li>'
+        output << '</li><li class = "'
       end
 
       res = get_chapter_pages_intersect(o.parent, WikiPage.find_by_id(o.parent.wiki_page_id))
@@ -76,9 +76,9 @@ module ManualChaptersHelper
       extraPages = res[:extraPages]
 
       if ((extraChapters.index(o)) || (o.wiki_page_id == nil))
-        output << '<div class = "extra-chapter">' + link_to( o.title, o) + '</div>'
+        output << 'extra-chapter">' + link_to( o.title, o)
       else
-        output << link_to( o.title, o)
+        output << 'exactly">' + link_to( o.title, o)
       end
 
       if (o.children == [])
