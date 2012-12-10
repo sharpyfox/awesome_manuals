@@ -6,7 +6,9 @@
 	<%= stylesheet_link_tag 'intersect', :plugin => 'awesome_manuals' %>
 <% end %>
 
-<%= render "parents" %>
+<% if @chapter != @chapter.manual.root %>
+	<%= render "parents" %>
+<% end %>
 
 <h2>
 	<%= t :manual_chapter_intersect_header %>
