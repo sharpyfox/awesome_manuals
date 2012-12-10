@@ -28,6 +28,6 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:awesome_manuals)
 			:partial => "awesome_manuals/settings"
 
 		# Menu
-		menu :application_menu, :awesome_manuals, { :controller => 'manuals', :action => 'index' }, :caption => :manuals		
+		menu :top_menu, :awesome_manuals, { :controller => 'manuals', :action => 'index' }, :caption => :manuals
 	end
 end
