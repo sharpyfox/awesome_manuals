@@ -25,16 +25,16 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:awesome_manuals)
 		settings :default => {:wkhtmltopdf_bin => WKHTMLTOPDF_PATH}, 
 			:partial => "awesome_manuals/settings"
 
-		project_module :awesome_manuals_module do
-			permission :edit_manuals, { 
-      			:manuals => [:edit, :destroy],
-      			:manual_chapters => [:edit, :destroy]
-    		}
+=begin									// Permissions not working, because Redmine is project-oriented
+		permission :edit_manuals, { 
+   			:manuals => [:edit, :destroy],
+   			:manual_chapters => [:edit, :destroy]
+  		}
     	
-    		permission :generate_manuals, { 
-      			:manuals => [:generate]
-    		}
-    	end
+   		permission :generate_manuals, { 
+   			:manuals => [:generate]
+   		}
+=end
 
 		# Menu
 		menu :top_menu, :awesome_manuals, { :controller => 'manuals', :action => 'index' }, :caption => :manuals
