@@ -59,10 +59,14 @@ class ManualChapter < ActiveRecord::Base
     self.use_custom_title = false
     self.save
 
+    childrens_ids = self.children.map{|c| c.wiki_page_id}
+
     WikiPage.find_all_by_parent_id(aWikiPage.id).each do |child_page|
-      child_chapter = manual.manual_chapters.build
-      child_chapter.parent_chapter_id = id
-      child_chapter.update_from_wiki_struct(child_page)
+      if (!childrens_ids.index(child_page.id))
+        child_chapter = manual.manual_chapters.build
+        child_chapter.parent_chapter_id = id
+        child_chapter.update_from_wiki_struct(child_page)
+      end
     end
   end
 

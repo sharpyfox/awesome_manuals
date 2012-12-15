@@ -63,6 +63,25 @@ class ManualChapterTest < ActiveSupport::TestCase
  		assert_equal false, chapter.children[1].children[0].use_custom_title
  	end
 
+ 	def test_smart_structure_import
+ 		chapter = manual_chapters(:smarty_diff_chapter)
+ 		page = awesome_wiki_pages(:root_wiki_page)		
+
+ 		chapter.update_from_wiki_struct(page)
+
+ 		assert_equal page.id, chapter.wiki_page_id
+ 		assert_equal 3, chapter.children.count
+ 		assert_equal false, chapter.use_custom_title
+ 		assert_equal manual_chapters(:chapter_003).id, chapter.children[0].id
+ 		assert_equal awesome_wiki_pages(:wiki_page_013).id, chapter.children[0].wiki_page_id
+ 		assert_equal awesome_wiki_pages(:wiki_page_014).id, chapter.children[1].wiki_page_id 		
+ 		assert_equal false, chapter.children[1].use_custom_title
+ 		assert_equal awesome_wiki_pages(:wiki_page_015).id, chapter.children[2].wiki_page_id
+ 		assert_equal false, chapter.children[2].use_custom_title
+ 		assert_equal awesome_wiki_pages(:wiki_page_016).id, chapter.children[1].children[0].wiki_page_id
+ 		assert_equal false, chapter.children[1].children[0].use_custom_title
+ 	end
+
  	#service methods
 
  	def get_valid_manual

@@ -163,3 +163,27 @@ chapter_002:
   rgt: 27
   created_at: 2012-09-29
   updated_at: 2012-10-01
+
+smarty_diff_chapter:
+  id: 15
+  manual_id: 7
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: 12
+  parent_id: nil
+  lft: 29
+  rgt: 32
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
+
+chapter_003:
+  id: 16
+  manual_id: 7
+  custom_title: Title
+  use_custom_title: true
+  wiki_page_id: 13
+  parent_id: 15
+  lft: 30
+  rgt: 31
+  created_at: 2012-09-29
+  updated_at: 2012-10-01
