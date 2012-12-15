@@ -15,7 +15,7 @@ before_install:
   # Plugin's name/directory
   - export PLUGIN_NAME=awesome_manuals
   # Git tag for redmine version
-  - export REDMINE_GIT_TAG=1.4.1
+  #- export REDMINE_GIT_TAG=1.4.1
   # Arguments passed to bundle install on Redmine's Gemfile
   #- export BUNDLE_ARGS="--without development sqlite"
   - export TARGET_DIR="$HOME/redmine"
@@ -23,5 +23,9 @@ before_script: "./test/ci/before_script.sh"
 script: "./test/ci/script.sh"
 
 env:
-  - "DB=mysql BUNDLE_WITHOUT=rmagick:postgres:sqlite"  
+  - "REDMINE_GIT_TAG=1.4.1 DB=mysql"
+  - "REDMINE_GIT_TAG=1.4.2 DB=mysql"
+  - "REDMINE_GIT_TAG=1.4.3 DB=mysql"
+  - "REDMINE_GIT_TAG=1.4.4 DB=mysql"
+  - "REDMINE_GIT_TAG=1.4.5 DB=mysql"
   # - "DB=postgres BUNDLE_WITHOUT=rmagick:mysql:mysql2:sqlite" unknown fixtures-isue
