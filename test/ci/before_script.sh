@@ -20,7 +20,8 @@ cp -r ~/builds/*/$REPO_NAME vendor/plugins/$PLUGIN_DIR
 ruby -e "str = File.read('Gemfile');File.open('Gemfile', 'w+') { |file| file.write(str.gsub(/\"mocha\"$/, '\"mocha\", \"0.12.3\"')) }"
 
 #export BUNDLE_GEMFILE=$TARGET_DIR/Gemfile
-bundle install --without=rmagick:postgres:sqlite
+bundle install --without=$BUNDLE_WITHOUT
+#rmagick:postgres:sqlite
 
 echo "creating $DB database"
 case $DB in
